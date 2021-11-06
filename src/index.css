@@ -1,13 +1,86 @@
-body {
+* {
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main {
+  display: flex;
+}
+
+p {
+  font-size: 30px;
+}
+
+/* onClick flex: .5; */
+nav {
+  height: 100vh;
+  width: 80px;
+  background: #C4C4C4;
+  border-radius: 0 0 80px 0;
+  
+}
+
+.showcase-container-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-showcase {
+  display: flex;
+  height: 400px;
+  width: 939px;
+  /* max-width: 1200px; */
+  background: #C4C4C4;
+  border-radius: 50px;
+  margin: 20px auto;
+}
+
+.left-image {
+  height: inherit;
+  flex: .75;
+  background: #E7E5E5;
+  border-radius: 50px;
+}
+
+.book-description-container {
+  padding: 50px;
+  flex: 1;
+}
+
+.book-container {
+  height: auto;
+  margin: auto;
+  margin-top: 0;
+  width: auto;
+  max-width: 1000px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  border: solid;
+  
+}
+
+.book-card {
+  height: 220px;
+  width: 190px;
+  background: #C4C4C4;
+  border-radius: 40px;
+  margin: 10px;
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.book-card:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.book-card-image {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  background-position: center;
 }
