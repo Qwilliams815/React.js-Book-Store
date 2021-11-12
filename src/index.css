@@ -6,6 +6,7 @@
 
 .main {
   display: flex;
+  background: #36393B;
 }
 
 p {
@@ -13,12 +14,35 @@ p {
 }
 
 /* onClick flex: .5; */
-nav {
+.nav:hover {
+  cursor: pointer;
+}
+
+.nav {
+  position: relative;
   height: 100vh;
   width: 80px;
-  background: #C4C4C4;
+  background: #A5D8FF;
   border-radius: 0 0 80px 0;
-  
+}
+
+.nav-expanded {
+  position: relative;
+  width: 380px;
+  height: 100vh;
+  background: #A5D8FF;
+  border-radius: 0 0 80px 0;
+}
+
+.nav-menu-x {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+  right: 0;
+}
+
+.red {
+  background: red;
 }
 
 .showcase-container-wrapper {
@@ -32,17 +56,29 @@ nav {
   height: 400px;
   width: 939px;
   /* max-width: 1200px; */
-  background: #C4C4C4;
+  background: #A5D8FF;
   border-radius: 50px;
   margin: 20px auto;
 }
 
 .left-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: inherit;
   flex: .75;
   background: #E7E5E5;
   border-radius: 50px;
+  object-fit: contain;
 }
+
+.left-image img {
+  height: inherit;
+  width: inherit;
+  object-fit: contain;
+  background-position: center;
+}
+
 
 .book-description-container {
   padding: 50px;
@@ -59,7 +95,8 @@ nav {
   justify-content: center;
   flex-wrap: wrap;
   align-content: flex-start;
-  border: solid;
+  background: #A5D8FF;
+  border-radius: 40px;
   
 }
 

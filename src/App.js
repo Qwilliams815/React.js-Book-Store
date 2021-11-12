@@ -1,88 +1,125 @@
-// import logo from './logo.svg';
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload. Hello!
-//         </p>
-//         <h1>Brian Williams</h1>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
 import './App.css';
+import Nav from './components/Nav';
 import BookCard from './components/BookCard';
+import BookShowcase from './components/BookShowcaseWindow';
+import { useState } from 'react';
 
 function App() {
 
-  // const name = "Brian Williams Weeeee";
-  // let counter = 0;
-  // function hello() {
-  //   console.log("hello World!", counter);
-  //   counter += 1;
-  // }
+  const  [state, setState] = useState({ cover: "./img/book.svg", title: 'Select a book!', desc: '' });
+  const [expanded, setExpanded] = useState(false);
+
+
+ 
 
   return (
     <div className="main">
-      <nav className="nav"></nav>
+
+      {/* <nav className='nav'></nav> */}
+      <Nav 
+        className={expanded ? "nav-expanded" : "nav"}
+        onClick={() => setExpanded(!expanded)}
+      />
+
       <div className="showcase-container-wrapper">
-        <div className="book-showcase">
-          <div className="left-image">
-            <img src="./assets/book-image.png" alt="" />
-          </div>
-          <div className="book-description-container">
-            <h1>Book Title</h1>
-            <br />
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi quos reiciendis nisi. Cumque vitae distinctio, facere, ea debitis laboriosam quibusdam laudantium sed cum esse iste, aspernatur reiciendis magnam rerum ducimus?</p>
-          </div>
-        </div>
+
+        <BookShowcase
+          img = {state.cover}
+          title = {state.title}
+          description = {state.desc}
+
+        />
+
         <div className="book-container">
-          <BookCard 
-          bookCardImage="./img/1984.jpg" 
-          title="1984"/>
 
           <BookCard 
-          bookCardImage="./img/alice-wonderland.jpg" 
-          title="Alice in Wonderland"/>
+          bookCardImage="./img/1984.jpg"
+          title = "1984"
+          clicked = {
+            () => setState({
+              cover: "./img/1984.jpg",
+              title: "1984",
+              desc: "this is 1984's description"
+          })}
+          
+          />
+
+          <BookCard 
+          bookCardImage="./img/alice-wonderland.jpg"
+          title = "Alice in Wonderland" 
+          clicked = {
+            () => setState({
+              cover: "./img/alice-wonderland.jpg" ,
+              title: "Alice in Wonderland",
+              desc: "this is Alice's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/dune.jpg" 
-          title="Dune"/>
+          title="Dune"
+          clicked = {
+            () => setState({
+              cover: "./img/dune.jpg",
+              title: "Dune",
+              desc: "this is Dune's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/great-gatsby.gif" 
-          title="The Great Gatsby"/>
+          title="The Great Gatsby"
+          clicked = {
+            () => setState({
+              cover: "./img/great-gatsby.gif",
+              title: "The Great Gatsby",
+              desc: "this is Gatsby's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/harry-potter.jpg" 
-          title="Harry Potter"/>
+          title="Harry Potter"
+          clicked = {
+            () => setState({
+              cover: "./img/harry-potter.jpg",
+              title: "Harry Potter",
+              desc: "this is Harry's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/steven-king.png" 
-          title="Needful Things"/>
+          title="Needful Things"
+          clicked = {
+            () => setState({
+              cover: "./img/steven-king.png",
+              title: "Needful Things",
+              desc: "this is steven king's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/sun-tzu.jpg" 
-          title="Art of War"/>
+          title="Art of War"
+          clicked = {
+            () => setState({
+              cover: "./img/sun-tzu.jpg",
+              title: "Art of War",
+              desc: "this is sun tzu's description"
+          })}
+          />
           
           <BookCard 
           bookCardImage="./img/the-alchemist.jpg" 
-          title="The Alchemist"/>
+          title="The Alchemist"
+          clicked = {
+            () => setState({
+              cover: "./img/the-alchemist.jpg",
+              title: "The Alchemist",
+              desc: "this is Alchemist's description"
+          })}
+          />
           
         </div>
       </div>
