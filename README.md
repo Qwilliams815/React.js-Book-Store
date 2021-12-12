@@ -1,3 +1,26 @@
+### React Book Store (Work in Progress)
+
+# Description -
+Dynamic DB-linked book store featuring various titles for sale/trade. Click on a book card to view further details in the book Showcase component.
+
+# Goals -
+- incorporate SQL database for books.
+- Link books dynamically.
+- configure price/ purchase order functionality.
+
+# Purpose -
+Built to learn react and dynamic web building.
+
+# What I've Learned -
+- React workflow.
+- Using components.
+- SQL.
+<br>
+<br>
+<br>
+<br>
+<br>
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
